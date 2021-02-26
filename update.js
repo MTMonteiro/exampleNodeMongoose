@@ -13,14 +13,8 @@ mongoose.connect("mongodb://localhost:27018/nodemongose", {
 
 const Article = mongoose.model("Article", articleModel1);
 
-const artigo = new Article({
-  title: "segundo artigo",
-  author: "Matheus",
-  body: "Vejamos que temos mais um artigo",
-});
+Article.findByIdAndUpdate("60383eaa52077aaafba5ec4a", {body: "esse texto foi alterado"}).then(() => {
+    console.log("update realizado")
+}).catch(err => console.log(err))
 
-artigo.save().then(() => {
-    console.log("artigo salvo!")
-}).catch(err => {
-    console.log(err)
-});
+

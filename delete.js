@@ -13,14 +13,7 @@ mongoose.connect("mongodb://localhost:27018/nodemongose", {
 
 const Article = mongoose.model("Article", articleModel1);
 
-const artigo = new Article({
-  title: "segundo artigo",
-  author: "Matheus",
-  body: "Vejamos que temos mais um artigo",
-});
-
-artigo.save().then(() => {
-    console.log("artigo salvo!")
-}).catch(err => {
-    console.log(err)
-});
+// retorna o objeto deletado
+Article.findByIdAndDelete("60383efe6ba5d0ad6581c37d").then(articles =>{
+    console.log(articles);
+}).catch(err => console.log(err))

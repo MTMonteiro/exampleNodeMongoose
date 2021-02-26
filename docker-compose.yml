@@ -9,8 +9,8 @@ services:
     ports:
         - 27018:27017
     environment:
-      MONGO_INITDB_ROOT_USERNAME: root
-      MONGO_INITDB_ROOT_PASSWORD: root!p4sswd
+    #   MONGO_INITDB_ROOT_USERNAME: root
+    #   MONGO_INITDB_ROOT_PASSWORD: root!p4sswd
       MONGO_INITDB_DATABASE: nodemongoose
 
   mongo-express:
